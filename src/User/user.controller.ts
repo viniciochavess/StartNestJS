@@ -5,10 +5,11 @@ import { randomUUID } from 'crypto';
 interface userParams{
   id:string
 }
-type  requestBody = {
-  name:string;
-  email:string;
-  password:string;
+interface requestBody  {
+  name:string,
+  email:string,
+  password:string,
+  userName:string
 
 }
 
