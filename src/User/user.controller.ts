@@ -5,18 +5,18 @@ interface userParams{
   id:string
 }
 
-@Controller()
+@Controller('/user')
 export class UserController {
-  @Get('/user/list')
+  @Get('/list')
   GetUserList() {
     return 'retornar a lista de usuários';
   }
-  @Get('/user/list/:id')
+  @Get('/list/:id')
   GetUserFindById(@Param() params:userParams){
     return params.id
   }
 
-  @Get('/user/query')
+  @Get('/query')
   GetUserFindByQuery(@Query() query:any){
     return {query}
   }
