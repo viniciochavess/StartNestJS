@@ -1,4 +1,9 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
+
+
+interface userParams{
+  id:string
+}
 
 @Controller()
 export class UserController {
@@ -7,7 +12,13 @@ export class UserController {
     return 'retornar a lista de usuários';
   }
   @Get('/user/list/:id')
-  GetUserFindById(@Param() params:any){
+  GetUserFindById(@Param() params:userParams){
     return params.id
   }
+
+  @Get('/user/query')
+  GetUserFindByQuery(@Query() query:any){
+    return {query}
+  }
+
 }
